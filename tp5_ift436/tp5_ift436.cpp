@@ -1,8 +1,9 @@
-// tp5_ift436.cpp : définit le point d'entrée pour l'application console.
+// tp5_ift436.cppÂ : dÃ©finit le point d'entrÃ©e pour l'application console.
 //
 
 #include "TriFusion.h"
 #include "TriSelection.h"
+#include "TriShell.h"
 #include <iostream>
 #include <vector>
 #include <ctime>
@@ -21,7 +22,7 @@ int main()
 	//print(v);
 	//cout << "------------------" << endl;
 
-	//Tri par sélection
+	//Tri par sÃ©lection
 	char date_time[32];
 	cout << "Tri Selection\n";
 	time_t t = time(0);
@@ -83,9 +84,33 @@ int main()
 	cout << "-------------------------------------------------------------------------------" << endl;
 
 	//tri de Shell (Shell Sort)
-	cout << "Tri Shell (404 not found)" << endl;
+	cout << "Tri Shell" << endl;
 	//print(v);
+	t = time(0);
+	strftime(date_time, 31, "%c", localtime(&t));
+	cout << date_time << " - Temps initial." << endl;
 
+	t1 = clock();
+	if (t1 == clock_t(-1))
+	{
+		cerr << "*** No clock." << endl;   exit(1);
+	}
+
+	TriShell s; 
+	vectorShell = s.sort(vectorBase);
+
+	t2 = clock();
+	if (t2 == clock_t(-1))
+	{
+		cerr << "*** No clock." << endl;   exit(1);
+	}
+
+	cout << "  Temps de traitement: " << t2 - t1 << " ticks ("
+		<< CLOCKS_PER_SEC << " ticks per second)" << endl;
+
+	t = time(0);
+	strftime(date_time, 31, "%c", localtime(&t));
+	cout << date_time << " - Temps final." << endl;
 	
 
 	system("PAUSE");
