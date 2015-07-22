@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClInclude Include="TriFusion.h" />
     <ClInclude Include="TriSelection.h" />
+    <ClInclude Include="TriShell.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

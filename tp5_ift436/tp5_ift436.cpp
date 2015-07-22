@@ -11,8 +11,6 @@
 using namespace std;
 int main()
 {
-
-
 	void print(vector<int>&);
 	void constructVector(vector<int>&);
 	vector<int> vectorBase{}, vectorSelection{}, vectorMerge{}, vectorShell{};
